@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+jinja2
+pillow
+tensorflow==2.15.0
+numpy
+google-generativeai
+python-multipart

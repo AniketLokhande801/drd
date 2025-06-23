@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chatbot-container">
+        <h2>Ask a question</h2>
+        <form action="/chat" method="post" class="chatbot-form">
+            <input type="text" name="question" placeholder="Type your question here..." required>
+            <button type="submit">Ask</button>
+        </form>
+        <p>This AI chatbot answers questions related to Diabetic Retinopathy Detection and medical image analysis.</p>
+        <small>Note: Off-topic questions may be politely declined by the assistant.</small>
+        {% if question %}
+            <div class="chat-bubble user">
+                <strong>You:</strong> {{ question }}
+            </div>
+           
+
+        {% endif %}
+        {% if response %}
+            <div class="chat-bubble ai">
+                <strong>AI:</strong> {{ response }}
+            </div>
+        {% endif %}
+        <a href="/" class="back-link">
+            <button type="button" class="back-btn">Back to Home</button>
+        </a>
+    </div>
+    <div class="footer">
+        Developed by <span class="author">Aniket Somnath Lokhande</span>
+    </div>
+</body>
+</html>

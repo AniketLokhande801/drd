@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>DR Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Upload Retina Image</h2>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required><br><br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+<div class="footer">
+    Developed by Aniket Lokhande
+</div>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DR Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Retina Image</h2>
+        <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Predict</button>
+        </form>
+        <a href="/chat" class="chatbot-link">
+            <button type="button" class="chatbot-btn">Go to Chatbot</button>
+        </a>
+        <p>Upload a retina scan image (JPG or PNG). The model will analyze it and predict the stage of Diabetic Retinopathy.</p>
+
+        {% if prediction %}
+            <div class="prediction-card">
+                <h3>Prediction:</h3>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="footer">
+        Developed by <span class="author">Aniket Somnath Lokhande</span>
+    </div>
+</body>
+</html>
